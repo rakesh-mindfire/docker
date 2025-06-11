@@ -39,12 +39,14 @@ public class Second {
     }
     @Test
     public void testGoogleTitle() throws MalformedURLException, InterruptedException {
-       // ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
-        FirefoxOptions options=new FirefoxOptions();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox", "--disable-dev-shm-usage","--disable-web-security",
+                "--disable-features=AllowInsecureLocalhost",
+                "--allow-insecure-localhost");
+        //FirefoxOptions options=new FirefoxOptions();
 
-        //WebDriver driver = new ChromeDriver(options);
-        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444"), options);
+        WebDriver driver = new ChromeDriver(options);
+        //WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444"), options);
 
         driver.get("https://www.google.com");
 
