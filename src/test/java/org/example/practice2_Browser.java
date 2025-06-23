@@ -3,6 +3,7 @@ package org.example;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -17,26 +18,24 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.sql.Driver;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
-public class practice2 {
+public class practice2_Browser {
     WebDriver driver;
     WebDriverWait wait;
     @BeforeMethod
     @Parameters({"browser"})
     public void login(String browser) throws MalformedURLException {
-        MutableCapabilities options;
+
         if(browser.equalsIgnoreCase("Chrome")){
-         options=new ChromeOptions();
+         driver=new ChromeDriver();
         } else if (browser.equalsIgnoreCase("Firefox")) {
-             options=new FirefoxOptions();
+             driver=new FirefoxDriver();
         }else{
-             options=new ChromeOptions();
-        }
-        driver=new RemoteWebDriver(new URL("http://localhost:4444"),options);
+driver=new ChromeDriver();        }
+        //driver=new RemoteWebDriver(new URL("http://localhost:4444"),options);
         // driver=new RemoteWebDriver(options);
         driver.get("https://rahulshettyacademy.com/AutomationPractice/");
         driver.manage().window().maximize();

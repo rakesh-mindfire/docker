@@ -12,6 +12,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <browser>Chrome</browser>
   </properties>
 
 
@@ -71,6 +72,9 @@
       <artifactId>maven-surefire-plugin</artifactId>
       <version>3.5.2</version>
       <configuration>
+        <systemPropertyVariables>
+          <browser>${browser}</browser>
+        </systemPropertyVariables>
         <suiteXmlFiles>
           <suiteXmlFile>testng.xml</suiteXmlFile>
         </suiteXmlFiles>

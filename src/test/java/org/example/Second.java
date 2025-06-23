@@ -30,7 +30,7 @@ public class Second {
     ExtentTest test;
     @BeforeClass
     public void before(){
-        ExtentSparkReporter reporterType=new ExtentSparkReporter("extentReport.html");// HTML report path
+        ExtentSparkReporter reporterType=new ExtentSparkReporter("./reports/extentReport.html");// HTML report path
         extent.attachReporter(reporterType);
     }
     @AfterClass

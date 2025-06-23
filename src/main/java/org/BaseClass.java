@@ -26,7 +26,7 @@ public class BaseClass {
     public void reportConfig(){
         //ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("extentReport.html");
 //Branch Rakesh
-        ExtentSparkReporter reporterType=new ExtentSparkReporter("extentReport.html");// HTML report path
+        ExtentSparkReporter reporterType=new ExtentSparkReporter("./reports/extentReport.html");// HTML report path
         extent.attachReporter(reporterType);
     }
 
