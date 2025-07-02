@@ -11,7 +11,7 @@ echo Waiting for Selenium Grid to be ready...
 timeout /t 15 >nul
 
 echo Running Maven tests...
-mvn clean test
+mvn clean test -Dtest=practice2
 
 if %errorlevel% neq 0 (
     echo Maven tests failed.
